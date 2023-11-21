@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "AdBlock",
+  "description": "Automatically removes Youtube ad elements",
+  "version": "1.0.5",
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
+    }
+  ]
+}
