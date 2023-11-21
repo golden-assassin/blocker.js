@@ -16,7 +16,6 @@ if (location.host === "www.youtube.com") {
         }
       }
     }
-    console.log("handle")
   }
   function waitVideoLoad() {
     (location.pathname === "/watch" && document.readyState === "complete") ?
