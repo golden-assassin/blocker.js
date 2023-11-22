@@ -1,17 +1,16 @@
 if (location.host === "www.youtube.com") {
-  function handle() {
+  var video;
+  const handle = () => {
     if (location.pathname === "/watch") {
+      video = video || document.querySelector('video.html5-main-video');
+      const button = document.querySelector("[id^='skip-button'] button");
       const content = document.querySelectorAll("[class^='ytp-ad-text']");
-      const first = content[0] || false;
-      if (first) {
-        const select = document.querySelector("[id^='skip-button']");
-        const video = document.querySelector('video.html5-main-video');
+      if (content[0] && (video || button)) {
         video.currentTime = video.duration || 999;
-        if (select) {
-          const button = select.querySelector("button");
-          button && button.click();
-        }
+        button && button.click();
       }
+    } else {
+      video = null;
     }
   }
   setInterval(handle, 800);
