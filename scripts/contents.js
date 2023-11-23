@@ -9,9 +9,7 @@ if (location.host === "www.youtube.com") {
         video ? (video.currentTime = video.duration || 999) : null;
         button && button.click();
       }
-    } else {
-      video = null;
-    }
+    } else video = null;
   }
   setInterval(handle, 800);
 }
